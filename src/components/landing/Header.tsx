@@ -57,7 +57,6 @@ export function Header() {
             className="bg-ld-primary text-ld-on-primary font-label-md text-sm px-5 py-2.5 rounded-full hover:bg-ld-primary-hover shadow-soft hover:shadow-float flex items-center gap-2 group"
           >
             <span>Commencer gratuitement</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </MagneticButton>
         </div>
 

@@ -33,7 +33,6 @@ export function Hero() {
             className="bg-ld-primary text-ld-on-primary font-label-md text-sm px-6 py-3 rounded-full hover:bg-ld-primary-hover shadow-float w-full sm:w-auto flex justify-center items-center gap-2 group"
           >
             <span>Commencer gratuitement</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </MagneticButton>
 
           <Link
