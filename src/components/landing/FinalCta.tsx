@@ -22,7 +22,7 @@ export function FinalCta() {
             Passez à la vitesse supérieure. Créez votre compte en moins d'une minute et envoyez votre première facture aujourd'hui.
           </p>
           
-          <MagneticButton href="/register" className="bg-white text-ld-primary font-bold text-lg px-8 py-4 rounded-full hover:bg-gray-50 transition-colors shadow-soft inline-block">
+          <MagneticButton href="/signup" className="bg-white text-ld-primary font-bold text-lg px-8 py-4 rounded-full hover:bg-gray-50 transition-colors shadow-soft inline-block">
             Commencer gratuitement
           </MagneticButton>
         </AnimateOnScroll>

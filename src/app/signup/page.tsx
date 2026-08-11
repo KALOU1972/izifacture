@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
-import { Building, Loader2 } from "lucide-react";
+import { Building, Loader2, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export default function SignupPage() {
@@ -43,7 +43,11 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[var(--color-background)] p-4">
+    <div className="min-h-screen flex items-center justify-center bg-[var(--color-background)] p-4 relative">
+      <Link href="/" className="absolute top-6 left-6 md:top-8 md:left-8 flex items-center gap-2 text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-text-main)] transition-colors hover:-translate-x-1 duration-200">
+        <ArrowLeft className="w-4 h-4" />
+        Retour à l'accueil
+      </Link>
       <div className="w-full max-w-md bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-8 shadow-sm">
         <div className="flex flex-col items-center mb-8">
           <div className="h-12 w-12 rounded-xl bg-[var(--color-primary)] text-white flex items-center justify-center font-bold text-2xl shadow-md mb-4">

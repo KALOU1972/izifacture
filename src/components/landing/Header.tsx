@@ -53,7 +53,7 @@ export function Header() {
             Se connecter
           </Link>
           <MagneticButton
-            href="/register"
+            href="/signup"
             className="bg-ld-primary text-ld-on-primary font-label-md text-sm px-5 py-2.5 rounded-full hover:bg-ld-primary-hover shadow-soft hover:shadow-float flex items-center gap-2 group"
           >
             <span>Commencer gratuitement</span>
@@ -89,7 +89,7 @@ export function Header() {
           <Link href="/login" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-ld-on-surface hover:bg-ld-primary/5 rounded-xl font-label-md transition-colors text-center">
             Se connecter
           </Link>
-          <Link href="/register" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 bg-ld-primary text-ld-on-primary rounded-xl font-label-md transition-colors text-center shadow-soft">
+          <Link href="/signup" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 bg-ld-primary text-ld-on-primary rounded-xl font-label-md transition-colors text-center shadow-soft">
             Commencer gratuitement
           </Link>
         </div>

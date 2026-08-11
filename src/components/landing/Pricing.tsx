@@ -49,7 +49,7 @@ export function Pricing() {
                   <span className="font-body-md text-ld-on-background">Gestion des clients de base</span>
                 </li>
               </ul>
-              <MagneticButton href="/register" className="w-full bg-ld-surface text-ld-primary font-bold py-3 rounded-xl border border-ld-primary/20 hover:bg-ld-primary-fixed transition-colors text-center block">
+              <MagneticButton href="/signup" className="w-full bg-ld-surface text-ld-primary font-bold py-3 rounded-xl border border-ld-primary/20 hover:bg-ld-primary-fixed transition-colors text-center block">
                 Commencer gratuitement
               </MagneticButton>
             </div>
@@ -93,7 +93,7 @@ export function Pricing() {
                   <span className="font-body-md text-white font-medium">Suivi des paiements</span>
                 </li>
               </ul>
-              <MagneticButton href="/register" className="w-full bg-white text-ld-primary font-bold py-3.5 rounded-xl hover:bg-gray-50 transition-colors shadow-soft text-center block">
+              <MagneticButton href="/signup" className="w-full bg-white text-ld-primary font-bold py-3.5 rounded-xl hover:bg-gray-50 transition-colors shadow-soft text-center block">
                 Passer en Pro
               </MagneticButton>
             </div>
@@ -128,7 +128,7 @@ export function Pricing() {
                   <span className="font-body-md text-ld-on-background">Support prioritaire</span>
                 </li>
               </ul>
-              <MagneticButton href="/register" className="w-full bg-ld-surface text-ld-primary font-bold py-3 rounded-xl border border-ld-primary/20 hover:bg-ld-primary-fixed transition-colors text-center block">
+              <MagneticButton href="/signup" className="w-full bg-ld-surface text-ld-primary font-bold py-3 rounded-xl border border-ld-primary/20 hover:bg-ld-primary-fixed transition-colors text-center block">
                 Contacter l'équipe
               </MagneticButton>
             </div>
