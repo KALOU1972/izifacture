@@ -25,13 +25,14 @@ export default function DashboardPage() {
   useEffect(() => {
     async function loadData() {
       // Load clients for mapping names
-      const { data: clientsData } = await supabase.from('clients').select('*');
+      const { data: clientsData } = await supabase.from('clients').select('*').returns<Database['public']['Tables']['clients']['Row'][]>();
       
       // Load invoices
       const { data: invoicesData } = await supabase
         .from('invoices')
         .select('*')
-        .order('issue_date', { ascending: false });
+        .order('issue_date', { ascending: false })
+        .returns<Invoice[]>();
 
       if (invoicesData && clientsData) {
         const mappedInvoices = invoicesData.map(inv => {

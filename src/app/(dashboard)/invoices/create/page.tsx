@@ -15,6 +15,7 @@ import { createClient } from "@/lib/supabase/client";
 import { Database } from "@/types/supabase";
 
 type Client = Database['public']['Tables']['clients']['Row'];
+type Invoice = Database['public']['Tables']['invoices']['Row'];
 
 // Custom Input Component to match the screenshot style
 interface FloatingInputProps {
@@ -93,12 +94,12 @@ export default function CreateInvoicePage() {
   useEffect(() => {
     async function loadData() {
       // Load clients
-      const { data: clientsData } = await supabase.from('clients').select('*');
+      const { data: clientsData } = await supabase.from('clients').select('*').returns<Client[]>();
       if (clientsData) setClients(clientsData);
 
       if (editId) {
         // Load existing invoice
-        const { data: invoice } = await supabase.from('invoices').select('*').eq('id', editId).single();
+        const { data: invoice } = await supabase.from('invoices').select('*').eq('id', editId).single<Invoice>();
         if (invoice) {
           setInvoiceNumber(invoice.invoice_number);
           setClientId(invoice.client_id);
@@ -107,11 +108,11 @@ export default function CreateInvoicePage() {
           
           if (clientsData) {
             const c = clientsData.find(cl => cl.id === invoice.client_id);
-            if (c) setClientEmail(c.email);
+            if (c) setClientEmail(c.email || "");
           }
 
           // Load items
-          const { data: itemsData } = await supabase.from('invoice_items').select('*').eq('invoice_id', editId);
+          const { data: itemsData } = await supabase.from('invoice_items').select('*').eq('invoice_id', editId).returns<Database['public']['Tables']['invoice_items']['Row'][]>();
           if (itemsData && itemsData.length > 0) {
             setItems(itemsData.map(item => ({
               id: item.id,
@@ -137,7 +138,7 @@ export default function CreateInvoicePage() {
     if (clientId) {
       const selected = clients.find(c => c.id === clientId);
       if (selected) {
-        setClientEmail(selected.email);
+        setClientEmail(selected.email || "");
       }
     }
   }, [clientId, clients]);
@@ -207,7 +208,7 @@ export default function CreateInvoicePage() {
 
     if (editId) {
       // Update existing
-      await supabase.from('invoices').update({
+      await (supabase as any).from('invoices').update({
         client_id: clientId,
         invoice_number: invoiceNumber,
         status: status,
@@ -217,7 +218,7 @@ export default function CreateInvoicePage() {
         tax_amount: taxAmount,
         total: grandTotal,
         notes: "" // Not implemented in form yet
-      }).eq('id', editId);
+      } as any).eq('id', editId);
 
       // Delete old items and insert new ones
       await supabase.from('invoice_items').delete().eq('invoice_id', editId);
@@ -232,7 +233,7 @@ export default function CreateInvoicePage() {
         subtotal: subTotal,
         tax_amount: taxAmount,
         total: grandTotal
-      }).select('id').single();
+      } as any).select('id').single<Invoice>();
       
       if (insertedInvoice) {
         currentInvoiceId = insertedInvoice.id;
@@ -248,7 +249,7 @@ export default function CreateInvoicePage() {
         unit_price: item.unitPrice,
         amount: item.unitPrice * item.quantity
       }));
-      await supabase.from('invoice_items').insert(itemsToInsert);
+      await supabase.from('invoice_items').insert(itemsToInsert as any);
     }
 
     setIsSaving(false);

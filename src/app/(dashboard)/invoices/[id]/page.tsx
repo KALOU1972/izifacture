@@ -40,7 +40,7 @@ export default function InvoiceDetailPage() {
         .from('invoices')
         .select('*')
         .eq('id', invoiceId)
-        .single();
+        .single<Invoice>();
         
       if (!invoice) {
         setIsLoading(false);
@@ -58,7 +58,7 @@ export default function InvoiceDetailPage() {
         .from('clients')
         .select('*')
         .eq('id', invoice.client_id)
-        .single();
+        .single<Client>();
       
       if (clientData) {
         setClient(clientData);
@@ -68,7 +68,8 @@ export default function InvoiceDetailPage() {
       const { data: itemsData } = await supabase
         .from('invoice_items')
         .select('*')
-        .eq('invoice_id', invoice.id);
+        .eq('invoice_id', invoice.id)
+        .returns<InvoiceItem[]>();
         
       if (itemsData) {
         setItems(itemsData);
@@ -110,12 +111,12 @@ export default function InvoiceDetailPage() {
     e.preventDefault();
     setIsSaving(true);
     
-    const { error } = await supabase
+    const { error } = await (supabase as any)
       .from('invoices')
       .update({
         due_date: editForm.dueDate,
         status: editForm.status
-      })
+      } as any)
       .eq('id', invoiceId);
       
     if (!error) {
@@ -136,9 +137,9 @@ export default function InvoiceDetailPage() {
     
     setIsSaving(true);
     
-    const { error } = await supabase
+    const { error } = await (supabase as any)
       .from('invoices')
-      .update({ status: newStatus })
+      .update({ status: newStatus } as any)
       .eq('id', invoiceId);
       
     if (!error) {

@@ -15,6 +15,7 @@ import { Database } from "@/types/supabase";
 
 type Invoice = Database['public']['Tables']['invoices']['Row'];
 type Client = Database['public']['Tables']['clients']['Row'];
+type InvoiceWithClient = Invoice & { client?: { name: string, email: string, phone: string } | null };
 
 export default function InvoicesPage() {
   const { t } = useLanguage();
@@ -22,7 +23,7 @@ export default function InvoicesPage() {
   const router = useRouter();
   const supabase = createClient();
   
-  const [invoices, setInvoices] = useState<Invoice[]>([]);
+  const [invoices, setInvoices] = useState<InvoiceWithClient[]>([]);
   const [clients, setClients] = useState<Client[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -39,7 +40,8 @@ export default function InvoicesPage() {
           *,
           client:clients(name, email, phone)
         `)
-        .order('created_at', { ascending: false });
+        .order('created_at', { ascending: false })
+        .returns<InvoiceWithClient[]>();
         
       if (invoicesData) setInvoices(invoicesData);
       

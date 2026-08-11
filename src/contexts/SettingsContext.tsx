@@ -68,11 +68,11 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
       }
 
       // 1. Fetch Profile
-      const { data: profile } = await supabase
+      const { data: profile } = (await supabase
         .from('profiles')
         .select('*')
         .eq('user_id', user.id)
-        .single();
+        .single()) as any;
         
       if (profile) {
         setProfileData({
@@ -94,11 +94,11 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
       const targetUserId = profile?.role === 'agent' && profile?.admin_id ? profile.admin_id : user.id;
 
       // 2. Fetch Company Settings
-      const { data: company } = await supabase
+      const { data: company } = (await supabase
         .from('company_settings')
         .select('*')
         .eq('user_id', targetUserId)
-        .single();
+        .single()) as any;
 
       if (company) {
         setCompanyData({
@@ -126,12 +126,12 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
       const { data: existingProfile } = await supabase.from('profiles').select('id').eq('user_id', user.id).maybeSingle();
       let profileError = null;
       if (existingProfile) {
-        const { error } = await supabase.from('profiles').update({
+        const { error } = await (supabase as any).from('profiles').update({
           full_name: profile.fullName,
           email: profile.email,
           phone: profile.phone,
           avatar_url: avatar
-        }).eq('user_id', user.id);
+        } as any).eq('user_id', user.id);
         profileError = error;
       } else {
         const { error } = await supabase.from('profiles').insert({
@@ -140,7 +140,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
           email: profile.email,
           phone: profile.phone,
           avatar_url: avatar
-        });
+        } as any);
         profileError = error;
       }
 
@@ -151,14 +151,14 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
         const { data: existingCompany } = await supabase.from('company_settings').select('id').eq('user_id', user.id).maybeSingle();
         let companyError = null;
         if (existingCompany) {
-          const { error } = await supabase.from('company_settings').update({
+          const { error } = await (supabase as any).from('company_settings').update({
             name: company.name,
             siret: company.siret,
             email: company.email,
             phone: company.phone,
             address: company.address,
             logo_url: logo
-          }).eq('user_id', user.id);
+          } as any).eq('user_id', user.id);
           companyError = error;
         } else {
           const { error } = await supabase.from('company_settings').insert({
@@ -169,7 +169,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
             phone: company.phone,
             address: company.address,
             logo_url: logo
-          });
+          } as any);
           companyError = error;
         }
 

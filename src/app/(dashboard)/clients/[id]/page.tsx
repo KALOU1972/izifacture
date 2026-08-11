@@ -36,7 +36,7 @@ export default function ClientProfilePage() {
         .from('clients')
         .select('*')
         .eq('id', clientId)
-        .single();
+        .single<Client>();
         
       if (clientError || !client) {
         setIsLoading(false);
@@ -56,7 +56,8 @@ export default function ClientProfilePage() {
       const { data: invoices } = await supabase
         .from('invoices')
         .select('*')
-        .eq('client_id', clientId);
+        .eq('client_id', clientId)
+        .returns<Invoice[]>();
         
       if (invoices) {
         setClientInvoices(invoices);
@@ -99,14 +100,14 @@ export default function ClientProfilePage() {
   const handleEditSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSaving(true);
-    const { error } = await supabase
+    const { error } = await (supabase as any)
       .from('clients')
       .update({
         name: editForm.name,
         email: editForm.email,
         phone: editForm.phone,
         address: editForm.address
-      })
+      } as any)
       .eq('id', clientId);
       
     if (!error) {

@@ -167,6 +167,7 @@ export const fr = {
       deleteAvatar: "Supprimer",
       fullName: "Nom complet",
       email: "Adresse e-mail",
+      phone: "Numéro de téléphone",
       password: "Nouveau mot de passe",
       regional: "Préférences régionales",
       currency: "Devise par défaut",
