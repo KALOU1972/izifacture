@@ -35,7 +35,7 @@ export function Header() {
         </Link>
 
         {/* Navigation Links (Desktop) */}
-        <nav className="hidden md:flex items-center gap-8 font-label-md text-label-md">
+        <nav className="hidden md:flex items-center gap-8 font-label-md text-sm">
           <Link href="#features" className="text-ld-secondary hover:text-ld-primary transition-colors hover:-translate-y-1 duration-200">
             Fonctionnalités
           </Link>
@@ -49,12 +49,12 @@ export function Header() {
 
         {/* Actions */}
         <div className="hidden md:flex items-center gap-4">
-          <Link href="/login" className="font-label-md text-label-md text-ld-on-surface hover:text-ld-primary transition-colors">
+          <Link href="/login" className="font-label-md text-sm text-ld-on-surface hover:text-ld-primary transition-colors">
             Se connecter
           </Link>
           <MagneticButton
             href="/register"
-            className="bg-ld-primary text-ld-on-primary font-label-md text-label-md px-6 py-2.5 rounded-full hover:bg-ld-primary-hover shadow-soft hover:shadow-float flex items-center gap-2 group"
+            className="bg-ld-primary text-ld-on-primary font-label-md text-sm px-5 py-2.5 rounded-full hover:bg-ld-primary-hover shadow-soft hover:shadow-float flex items-center gap-2 group"
           >
             <span>Commencer gratuitement</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

@@ -90,24 +90,25 @@ body {
 
 /* Landing Page Theme */
 @theme {
-  --color-ld-primary: #180052;
-  --color-ld-primary-hover: #2d1b69;
-  --color-ld-background: #fcf9f8;
-  --color-ld-surface: #fcf9f8;
-  --color-ld-on-background: #1c1b1b;
+  --color-ld-primary: #4f46e5;
+  --color-ld-primary-hover: #4338ca;
+  --color-ld-background: #ffffff;
+  --color-ld-surface: #f8fafc;
+  --color-ld-surface-alt: #f1f5f9;
+  --color-ld-on-background: #0f172a;
   --color-ld-on-primary: #ffffff;
-  --color-ld-on-surface: #1c1b1b;
-  --color-ld-secondary: #5e5d69;
-  --color-ld-error-container: #ffdad6;
-  --color-ld-error: #ba1a1a;
-  --color-ld-primary-fixed: #e7deff;
+  --color-ld-on-surface: #334155;
+  --color-ld-secondary: #475569;
+  --color-ld-error-container: #fee2e2;
+  --color-ld-error: #ef4444;
+  --color-ld-primary-fixed: #e0e7ff;
   --color-ld-surface-container-lowest: #ffffff;
-  --color-ld-surface-container-low: #f6f3f2;
-  --color-ld-outline-variant: #cac4d2;
-  --color-ld-outline: #797582;
-  --color-ld-primary-container: #2d1b69;
-  --color-ld-on-primary-container: #9686d9;
-  --color-ld-inverse-primary: #cbbeff;
+  --color-ld-surface-container-low: #f8fafc;
+  --color-ld-outline-variant: #e2e8f0;
+  --color-ld-outline: #94a3b8;
+  --color-ld-primary-container: #1e1b4b;
+  --color-ld-on-primary-container: #c7d2fe;
+  --color-ld-inverse-primary: #a5b4fc;
 
   --spacing-gutter: 24px;
   --spacing-stack-md: 16px;

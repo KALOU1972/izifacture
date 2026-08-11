@@ -10,13 +10,13 @@ export function Hero() {
       {/* Floating Decorative Elements */}
       <img
         alt="Floating cash left"
-        className="absolute top-20 left-10 w-48 opacity-40 float-animation -z-10 blur-[2px] hidden md:block"
-        src="https://lh3.googleusercontent.com/aida/AP1WRLvgFXdOCrjOu8i0ARF7-dH1H_fCbFbT08MwjEKq4Ui0P8F1LxMfVjg85sI4YtWIpePjUrLdTejYlbxctJnIFiMOnowZOV_GETFQ3j4lF_Np3kBZgtKfx-K0jV3tnZ3-6m0rHvKrdnJyySve9BWEWdEXOBHbEr9tXkoF4j4eK8n-wVgl0shjDQsnsdFgEgZ_S6aQIrnjGgT9YJUYjSlfDsXvcrnTWZ45O-aFMDyMQ49LNkeCoWakc9fQ5w"
+        className="absolute top-20 left-10 w-48 opacity-40 float-animation -z-10 hidden md:block"
+        src="/images/landing/cash_1.png"
       />
       <img
         alt="Floating cash right"
-        className="absolute bottom-40 right-10 w-64 opacity-60 float-animation-delayed -z-10 blur-[1px] hidden lg:block"
-        src="https://lh3.googleusercontent.com/aida/AP1WRLsyQ4moC4-0kGQvqiT_khxTUVm1oGVcpw9t5pStYa1-cExrVFp3PtOS-4bqr72GCDYFFdiOnKrWlIdrT-7xUbJtkBJm_tLYTIjQwcLQPUQY_fQGW06xiMszAY_IPlBExBnnWo5kYx4_6sEJHRxjNo4q1r3G6BD33XaYm5tatI-f6PjQtFNpbaXLcWyL3SRRj7yHly5pVgCOEnJkZFpNoKzunDePUNaUiiTMYQIao3Gh0XQFhMsPqoIqA18"
+        className="absolute bottom-40 right-10 w-64 opacity-60 float-animation-delayed -z-10 hidden lg:block"
+        src="/images/landing/cash_2.png"
       />
 
       <div className="max-w-[var(--spacing-container-max)] mx-auto text-center relative z-10 w-full mt-10">
@@ -30,7 +30,7 @@ export function Hero() {
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-20">
           <MagneticButton
             href="/register"
-            className="bg-ld-primary text-ld-on-primary font-label-md text-label-md px-8 py-4 rounded-full hover:bg-ld-primary-hover shadow-float w-full sm:w-auto flex justify-center items-center gap-2 group"
+            className="bg-ld-primary text-ld-on-primary font-label-md text-sm px-6 py-3 rounded-full hover:bg-ld-primary-hover shadow-float w-full sm:w-auto flex justify-center items-center gap-2 group"
           >
             <span>Commencer gratuitement</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -38,7 +38,7 @@ export function Hero() {
 
           <Link
             href="#demo"
-            className="bg-ld-surface text-ld-primary font-label-md text-label-md px-8 py-4 rounded-full border border-ld-primary/20 hover:bg-ld-primary-fixed hover:border-ld-primary/50 transition-all duration-300 w-full sm:w-auto flex justify-center items-center gap-2 group shadow-sm hover:shadow-soft"
+            className="bg-ld-surface text-ld-primary font-label-md text-sm px-6 py-3 rounded-full border border-ld-primary/20 hover:bg-ld-primary-fixed hover:border-ld-primary/50 transition-all duration-300 w-full sm:w-auto flex justify-center items-center gap-2 group shadow-sm hover:shadow-soft"
           >
             <Play className="w-5 h-5 text-ld-primary group-hover:scale-110 transition-transform" />
             <span>Voir la démo</span>

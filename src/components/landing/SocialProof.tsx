@@ -2,7 +2,7 @@ import React from "react";
 
 export function SocialProof() {
   return (
-    <section className="py-12 border-t border-b border-ld-outline-variant/10 bg-ld-surface-container-low/50">
+    <section id="solutions" className="py-12 border-t border-b border-ld-outline-variant/10 bg-ld-surface-container-low/50">
       <div className="max-w-[var(--spacing-container-max)] mx-auto px-spacing-margin-mobile md:px-spacing-margin-desktop text-center">
         <p className="font-label-sm text-label-sm text-ld-outline uppercase tracking-wider mb-8">
           Ils nous font confiance

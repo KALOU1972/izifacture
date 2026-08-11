@@ -3,7 +3,7 @@ import { Frown, Calculator, EyeOff } from "lucide-react";
 
 export function PainPoints() {
   return (
-    <section id="features" className="py-spacing-section-gap px-spacing-margin-mobile md:px-spacing-margin-desktop bg-ld-surface">
+    <section id="features" className="py-spacing-section-gap px-spacing-margin-mobile md:px-spacing-margin-desktop bg-ld-surface-alt border-t border-ld-outline-variant/10">
       <div className="max-w-[var(--spacing-container-max)] mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-ld-on-background mb-4">

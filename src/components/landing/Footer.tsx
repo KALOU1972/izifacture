@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="w-full py-spacing-stack-lg bg-ld-primary-container border-t border-ld-outline-variant/10 text-ld-on-primary">
+    <footer id="pricing" className="w-full py-spacing-stack-lg bg-ld-primary-container border-t border-ld-outline-variant/10 text-ld-on-primary">
       <div className="max-w-[var(--spacing-container-max)] mx-auto px-spacing-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-spacing-gutter font-body-md text-body-md">
         
         <div className="col-span-1 md:col-span-1">
