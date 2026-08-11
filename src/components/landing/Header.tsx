@@ -39,8 +39,8 @@ export function Header() {
           <Link href="#features" className="text-ld-secondary hover:text-ld-primary transition-colors hover:-translate-y-1 duration-200">
             Fonctionnalités
           </Link>
-          <Link href="#solutions" className="text-ld-secondary hover:text-ld-primary transition-colors hover:-translate-y-1 duration-200">
-            Solutions
+          <Link href="#how-it-works" className="text-ld-secondary hover:text-ld-primary transition-colors hover:-translate-y-1 duration-200">
+            Comment ça marche
           </Link>
           <Link href="#pricing" className="text-ld-secondary hover:text-ld-primary transition-colors hover:-translate-y-1 duration-200">
             Tarifs
@@ -79,8 +79,8 @@ export function Header() {
           <Link href="#features" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-ld-on-surface hover:bg-ld-primary/5 rounded-xl font-label-md transition-colors">
             Fonctionnalités
           </Link>
-          <Link href="#solutions" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-ld-on-surface hover:bg-ld-primary/5 rounded-xl font-label-md transition-colors">
-            Solutions
+          <Link href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-ld-on-surface hover:bg-ld-primary/5 rounded-xl font-label-md transition-colors">
+            Comment ça marche
           </Link>
           <Link href="#pricing" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-ld-on-surface hover:bg-ld-primary/5 rounded-xl font-label-md transition-colors">
             Tarifs
