@@ -38,7 +38,7 @@ export function Hero() {
           </MagneticButton>
 
           <Link
-            href="#demo"
+            href="#how-it-works"
             className="bg-ld-surface text-ld-primary font-label-md text-sm px-6 py-3 rounded-full border border-ld-primary/20 hover:bg-ld-primary-fixed hover:border-ld-primary/50 transition-all duration-300 w-full sm:w-auto flex justify-center items-center gap-2 group shadow-sm hover:shadow-soft"
           >
             <Play className="w-5 h-5 text-ld-primary group-hover:scale-110 transition-transform" />
